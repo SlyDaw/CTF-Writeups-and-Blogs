@@ -1,8 +1,8 @@
 ---
 toc: true
 layout: post
-description:sesd
-categories: [CTF]
+description:[Link to CTF Module](https://academy.hackthebox.com/course/preview/getting-started)
+categories: [CTF], [HackTheBox]
 title: Write Up: HackTheBox - Getting Started (Academy Module)
 ---
 

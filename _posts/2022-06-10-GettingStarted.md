@@ -1,9 +1,9 @@
 ---
 toc: true
 layout: post
-description:[Link to CTF Module](https://academy.hackthebox.com/course/preview/getting-started)
-categories: [CTF], [HackTheBox], [Cybersecurity]
-title: Write Up: HackTheBox - Getting Started (Academy Module)
+description: Solving HackTheBox - Getting Started CTF.
+categories: [CTF]
+title: Write Up for HacktheBox - Getting Started (Academy Module)
 ---
 
 *Contains Spoilers*

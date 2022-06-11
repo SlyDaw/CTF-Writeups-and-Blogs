@@ -1,9 +1,9 @@
 ---
 toc: true
 layout: post
-description: as
+description: [link](https://academy.hackthebox.com/course/preview/getting-started)
 categories: [CTF, HackTheBox]
-title: [Write Up] HackTheBox - Getting Started (Academy Module)
+title: HackTheBox - Getting Started (Academy Module)
 ---
 *Contains Spoilers*
 ## nmap scan

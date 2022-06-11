@@ -1,13 +1,11 @@
 ---
 toc: true
 layout: post
-description: Solving HackTheBox - Getting Started CTF.
-categories: [Cybersecurity]
-title: Write Up for HacktheBox - Getting Started (Academy Module)
+description: [Link to CTF Module](https://academy.hackthebox.com/course/preview/getting-started)
+categories: [CTF][HackTheBox]
+title: Write Up: HackTheBox - Getting Started (Academy Module)
 ---
-
-# HTB - Getting Started (Academy Module)
-###### *Contains Spoilers*
+*Contains Spoilers*
 ## nmap scan
 Machine IP: 10.129.42.249
  
@@ -48,8 +46,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 23.74 seconds
 ```
-We notice that there are 2 open ports: port 80 is running a web server and port 22 is running OpenSSH. Lets continue with navigating to the web server, since that may provide us with a larger attack surface.
-
+We notice that there are 2 open ports: port 80 is running a web server and port 22 is running OpenSSH. Let's continue with navigating to the web server, since that may provide us with a larger attack surface.
 ## Enumerating the Web Server
 First, directly navigate to the server IP from your browser.
 
@@ -94,25 +91,25 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 When getting several hits like these, it is important to navigate to the web pages and not omit any of the directories as they may contain useful information.
 
 Reading the html source code didn't alert us of anything signficant.
-Therefore, lets navigate to our first directory hit:  `10.129.42.249/data/`
+Therefore, let's navigate to our first directory hit:  `10.129.42.249/data/`
 
 ![Pasted image 20220610112230](https://user-images.githubusercontent.com/90112418/173173049-d273c8fc-f218-4822-8687-51d8a4d1273b.png)
 As we can see, we have some folders with files in them. You should be going through all of these folders one by one and checking the files for any valuable information and noting them. 
 
 Upon going to the **users** folder, we are met with a .xml file named **admin**. 
 
-![Pasted image 20220610112522](https://user-images.githubusercontent.com/90112418/173173060-f31b8767-b7bb-4459-9b09-32b649f1f3ac.png) So it looks like there may be a user named **admin**. Credentials are great to have so lets note that username down in our notes.  We also have a password string so let's write that down as well. 
+![Pasted image 20220610112522](https://user-images.githubusercontent.com/90112418/173173060-f31b8767-b7bb-4459-9b09-32b649f1f3ac.png) So it looks like there may be a user named **admin**. Credentials are great to have so let's note that username down in our notes.  We also have a password string so let's write that down as well. 
 
 If we look back at our gobuster scan, we'll notice the **admin** directory. Let's navigate there to see what we may find. ## Admin Portal Enumeration
 Let's navigate to ``10.129.42.249/admin/``
 
 ![Pasted image 20220610113352](https://user-images.githubusercontent.com/90112418/173173072-e2e4c243-51a8-4bdb-afd7-2796d508ecfc.png)
-Looks like we are met with a login page. We noted the credentials we obtained from browsing the web server directories , so lets try signing in with **admin** as the username and the string  `d033e22ae348aeb5660fc2140aec35850c4da997` as the password. 
+Looks like we are met with a login page. We noted the credentials we obtained from browsing the web server directories , so let's try signing in with **admin** as the username and the string  `d033e22ae348aeb5660fc2140aec35850c4da997` as the password. 
 
 ![Pasted image 20220610113647](https://user-images.githubusercontent.com/90112418/173173079-1c3ee337-2946-4e63-9d02-77a6b21e19d3.png)
 As shown by the error, the login failed and our credentials are wrong. The password string may be encoded text or , after all, may not even be related to the admin password. 
 
-Since there is a good chance our username is correct, lets try some common passwords that **admins** may use or leave unchanged before approaching other options, like bruteforcing or cracking the hash. Some examples of common passwords are *password, admin, password123*, etc.
+Since there is a good chance our username is correct, let's try some common passwords that **admins** may use or leave unchanged before approaching other options, like bruteforcing or cracking the hash. Some examples of common passwords are *password, admin, password123*, etc.
 
 After attempting these common passwords, the credentials **admin:password** seem to log us in. 
 
@@ -136,7 +133,7 @@ For this instance, I will use the Metasploit Framework and other CVE databases i
 
 Let's first search for a Metasploit module that works against our version of **GetSimple**. If we are unable to find a working module in Metasploit , we will move on to CVE databases such as Rapid7 and ExploitDB to look further.
 
-Lets open our metasploit console.
+Let's open our metasploit console.
 
 `> msfconsole`
 
@@ -226,7 +223,7 @@ Exploit target:
 ```
 It looks like we are required to set the *RHOSTS, RPORT, TARGETURI,* and *LHOST* options. We can also see on the bottom that this module works with `GetSimpleCMS 3.3.15 and before`.
 
-RHOSTS is our target IP address, so lets begin by setting that.
+RHOSTS is our target IP address, so let's begin by setting that.
 
 `> set RHOSTS 10.129.42.249 `
 
@@ -283,7 +280,7 @@ Exploit target:
    0   GetSimpleCMS 3.3.15 and before
 
 ```
-Everything looks good to go, so lets move on to the moment we've **ALL** been waiting for: using the exploit.
+Everything looks good to go, so let's move on to the moment we've **ALL** been waiting for: using the exploit.
 ## Using the GetSimpleCMS Exploit
 Before running the exploit, we should run the following command to ensure that our exploit works against the machine.
 
@@ -313,7 +310,7 @@ Let's move on to our post exploitation procedure.
 ## Post Exploitation - Finding the user.txt flag
 After gaining a foothold, we are asked to find and submit the contents of **user.txt** as a flag.
 
-Now that we have a meterpreter shell in the machine, lets type the following command to drop into a system command shell.
+Now that we have a meterpreter shell in the machine, let's type the following command to drop into a system command shell.
 
 `> shell`
 
@@ -383,6 +380,7 @@ root.txt
 f1fba6e9f71efb2630e6e34da6387842
 ```
 Congratulations, the final flag is ==f1fba6e9f71efb2630e6e34da6387842==. You have officially completed the module!
+##Final Thoughts
 The machine from the Getting Started module in HackTheBox Academy is a great first CTF for any beginner. I would recommend some basic knowledge of linux and tool usage , but the module does a great job in going over some of the skills and then letting the user try to pwn the machine on their own. If you would like to try the module yourself, here is the [link](https://academy.hackthebox.com/course/preview/getting-started).
 
 **Have fun and happy hacking!**

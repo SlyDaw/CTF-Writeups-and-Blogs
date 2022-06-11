@@ -1,10 +1,11 @@
 ---
 toc: true
 layout: post
-description: Solving HackTheBox - Getting Started CTF.
-categories: [Cybersecurity]
-title: Write Up for HacktheBox - Getting Started (Academy Module)
+description:[Link to CTF Module](https://academy.hackthebox.com/course/preview/getting-started)
+categories: [CTF], [HackTheBox], [Cybersecurity]
+title: Write Up: HackTheBox - Getting Started (Academy Module)
 ---
+
 
 # HTB - Getting Started (Academy Module)
 ###### *Contains Spoilers*

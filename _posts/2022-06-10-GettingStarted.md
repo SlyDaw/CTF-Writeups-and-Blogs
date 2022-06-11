@@ -119,7 +119,7 @@ Let's navigate through all of the dashboard tabs and look for some goodies, like
 If we head over to the files tab, it looks like we are given an option to ``upload a file``.
 
 ![Pasted image 20220610121812](https://user-images.githubusercontent.com/90112418/173173091-58215928-727b-4bce-aa6a-d4353e795f46.png)
-This could give us some attack vectors, such as **RCE** (Remot Code Execution) or some kind of **code injection**. However, when clicking on the upload files option, it seems that we aren't able to exercise the feature for whatever reason.
+This could give us some attack vectors, such as **RCE** (Remote Code Execution) or some kind of **code injection**. However, when clicking on the upload files option, it seems that we aren't able to exercise the feature for whatever reason.
 
 Let's put this aside for now instead of attempting to troubleshoot and could always come back to it later in case we don't find anything else. 
 

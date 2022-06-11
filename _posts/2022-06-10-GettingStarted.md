@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description:(https://academy.hackthebox.com/course/preview/getting-started)
+description:sesd
 categories: [CTF], [HackTheBox], [Cybersecurity]
 title: Write Up: HackTheBox - Getting Started (Academy Module)
 ---

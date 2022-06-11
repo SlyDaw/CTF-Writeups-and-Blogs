@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Solving HackTheBox - Getting Started CTF.
-categories: [CTF], [HackTheBox]
+categories: [CTF] [HackTheBox]
 title: Write Up for HacktheBox - Getting Started (Academy Module)
 ---
 

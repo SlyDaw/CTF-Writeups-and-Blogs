@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description:asas
+description: asas
 categories: [CTF, HackTheBox]
 title: Write Up HackTheBox - Getting Started (Academy Module)
 ---

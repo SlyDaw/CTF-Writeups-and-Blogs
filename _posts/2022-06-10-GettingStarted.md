@@ -233,7 +233,7 @@ Next, RPORT is our targets port. Since our nmap scan told us that the web server
 
 The TARGETURI option dictates under which path the service operates. In our case, it is in the base path of `/` and therefore does not need to be changed either.
 
-The LHOST option is our host's NIC (network interface card) address. Since we are connected using the HacktheBox VPN, it will most likely be under the tun0 interface. We can check our tun0 IP address by typing the following command in a new terminal on our host.
+The LHOST option is our host's NIC (network interface card) address. Since we are connected using the HacktheBox VPN, it will most likely be under the tun0 interface. We can check our tun0 IP address the following command in a new terminal on our host.
 
 `> ip a`
 
@@ -295,7 +295,7 @@ Perfect! Our machine seems to be vulnerable
 
 Keep in mind that not all metasploit modules support the ``check`` feature , but it is always a nice thing to have.
 
-Now that we are all set, let's hit the big red button by typing
+Now that we are all set, let's hit the big red button by typing:
 
 ``> run``
 

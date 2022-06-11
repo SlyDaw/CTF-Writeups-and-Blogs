@@ -3,7 +3,7 @@ toc: true
 layout: post
 description:asas
 categories: [CTF, HackTheBox]
-title: Write Up: HackTheBox - Getting Started (Academy Module)
+title: Write Up HackTheBox - Getting Started (Academy Module)
 ---
 
 *Contains Spoilers*

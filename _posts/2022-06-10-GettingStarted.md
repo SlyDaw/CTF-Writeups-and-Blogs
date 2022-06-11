@@ -5,8 +5,6 @@ description: https://academy.hackthebox.com/course/preview/getting-started
 categories: [CTF, HackTheBox]
 title: Write Up for HackTheBox - Getting Started (Academy Module) 
 ---
-*Contains Spoilers*
-
 ## nmap scan
 Machine IP: 10.129.42.249
  
@@ -389,4 +387,4 @@ The machine from the Getting Started module in HackTheBox Academy is a great fir
 
 **Have fun and happy hacking!**
 
- Special Thanks to [Koi](https://koi0x.github.io/Research/), [ser3nity](https://ser3n1ty.com/), and leo.
+ *Special Thanks to [Koi](https://koi0x.github.io/Research/), [ser3nity](https://ser3n1ty.com/), and leo.*

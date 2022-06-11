@@ -5,6 +5,7 @@ description: https://academy.hackthebox.com/course/preview/getting-started
 categories: [CTF, HackTheBox]
 title: Write Up for HackTheBox - Getting Started (Academy Module) 
 ---
+
 *Contains Spoilers*
 ## nmap scan
 Machine IP: 10.129.42.249

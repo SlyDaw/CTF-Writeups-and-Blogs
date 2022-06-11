@@ -1,11 +1,10 @@
 ---
 toc: true
 layout: post
-description: [Link to CTF Module](https://academy.hackthebox.com/course/preview/getting-started)
+description:(https://academy.hackthebox.com/course/preview/getting-started)
 categories: [CTF], [HackTheBox], [Cybersecurity]
 title: Write Up: HackTheBox - Getting Started (Academy Module)
 ---
-# HackTheBox - Getting Started (Academy Module)
 *Contains Spoilers*
 ## nmap scan
 Machine IP: 10.129.42.249

@@ -37,10 +37,10 @@ url: "https://SlyDaw.github.io" # the base hostname & protocol for your site, e.
 baseurl: "/CTF-Writeups-and-Blogs" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
-minima:
-  social_links:
-    twitter: slydaw1
-    github: SlyDaw
+#minima:
+ # social_links:
+    #twitter: slydaw1
+    #github: SlyDaw
 
 # Set this to true to get LaTeX math equation support
 use_math: 

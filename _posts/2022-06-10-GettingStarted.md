@@ -380,7 +380,7 @@ root.txt
 f1fba6e9f71efb2630e6e34da6387842
 ```
 Congratulations, the final flag is ==f1fba6e9f71efb2630e6e34da6387842==. You have officially completed the module!
-##Final Thoughts
+## Final Thoughts
 The machine from the Getting Started module in HackTheBox Academy is a great first CTF for any beginner. I would recommend some basic knowledge of linux and tool usage , but the module does a great job in going over some of the skills and then letting the user try to pwn the machine on their own. If you would like to try the module yourself, here is the [link](https://academy.hackthebox.com/course/preview/getting-started).
 
 **Have fun and happy hacking!**

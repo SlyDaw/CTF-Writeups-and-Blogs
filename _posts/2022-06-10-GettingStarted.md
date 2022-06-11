@@ -100,7 +100,8 @@ Upon going to the **users** folder, we are met with a .xml file named **admin**.
 
 ![Pasted image 20220610112522](https://user-images.githubusercontent.com/90112418/173173060-f31b8767-b7bb-4459-9b09-32b649f1f3ac.png) So it looks like there may be a user named **admin**. Credentials are great to have so let's note that username down in our notes.  We also have a password string so let's write that down as well. 
 
-If we look back at our gobuster scan, we'll notice the **admin** directory. Let's navigate there to see what we may find. ## Admin Portal Enumeration
+If we look back at our gobuster scan, we'll notice the **admin** directory. Let's navigate there to see what we may find. 
+## Admin Portal Enumeration
 Let's navigate to ``10.129.42.249/admin/``
 
 ![Pasted image 20220610113352](https://user-images.githubusercontent.com/90112418/173173072-e2e4c243-51a8-4bdb-afd7-2796d508ecfc.png)

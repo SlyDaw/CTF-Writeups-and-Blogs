@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-CS University Student | Aspiring Pentester
+CS University Student, Aspiring Pentester
 
 
 https://github.com/SlyDaw

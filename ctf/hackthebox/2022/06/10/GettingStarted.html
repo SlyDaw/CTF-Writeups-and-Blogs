@@ -102,6 +102,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#nmap-scan">nmap scan</a></li>
 <li class="toc-entry toc-h2"><a href="#enumerating-the-web-server">Enumerating the Web Server</a></li>
 <li class="toc-entry toc-h2"><a href="#gobuster-scan">Gobuster Scan</a></li>
+<li class="toc-entry toc-h2"><a href="#admin-portal-enumeration">Admin Portal Enumeration</a></li>
 <li class="toc-entry toc-h2"><a href="#using-the-getsimplecms-exploit">Using the GetSimpleCMS Exploit</a></li>
 <li class="toc-entry toc-h2"><a href="#post-exploitation---finding-the-usertxt-flag">Post Exploitation - Finding the user.txt flag</a></li>
 <li class="toc-entry toc-h2"><a href="#final-thoughts">Final Thoughts</a></li>
@@ -201,8 +202,10 @@ As we can see, we have some folders with files in them. You should be going thro
 
 <p><img src="https://user-images.githubusercontent.com/90112418/173173060-f31b8767-b7bb-4459-9b09-32b649f1f3ac.png" alt="Pasted image 20220610112522"> So it looks like there may be a user named <strong>admin</strong>. Credentials are great to have so let’s note that username down in our notes.  We also have a password string so let’s write that down as well.</p>
 
-<p>If we look back at our gobuster scan, we’ll notice the <strong>admin</strong> directory. Let’s navigate there to see what we may find. ## Admin Portal Enumeration
-Let’s navigate to <code class="language-plaintext highlighter-rouge">10.129.42.249/admin/</code></p>
+<p>If we look back at our gobuster scan, we’ll notice the <strong>admin</strong> directory. Let’s navigate there to see what we may find.</p>
+<h2 id="admin-portal-enumeration">
+<a class="anchor" href="#admin-portal-enumeration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Admin Portal Enumeration</h2>
+<p>Let’s navigate to <code class="language-plaintext highlighter-rouge">10.129.42.249/admin/</code></p>
 
 <p><img src="https://user-images.githubusercontent.com/90112418/173173072-e2e4c243-51a8-4bdb-afd7-2796d508ecfc.png" alt="Pasted image 20220610113352">
 Looks like we are met with a login page. We noted the credentials we obtained from browsing the web server directories , so let’s try signing in with <strong>admin</strong> as the username and the string  <code class="language-plaintext highlighter-rouge">d033e22ae348aeb5660fc2140aec35850c4da997</code> as the password.</p>

@@ -103,8 +103,10 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#enumerating-the-web-server">Enumerating the Web Server</a></li>
 <li class="toc-entry toc-h2"><a href="#gobuster-scan">Gobuster Scan</a></li>
 <li class="toc-entry toc-h2"><a href="#admin-portal-enumeration">Admin Portal Enumeration</a></li>
+<li class="toc-entry toc-h2"><a href="#finding-an-exploit-for-getsimple-3315">Finding an exploit for GetSimple 3.3.15</a></li>
 <li class="toc-entry toc-h2"><a href="#using-the-getsimplecms-exploit">Using the GetSimpleCMS Exploit</a></li>
 <li class="toc-entry toc-h2"><a href="#post-exploitation---finding-the-usertxt-flag">Post Exploitation - Finding the user.txt flag</a></li>
+<li class="toc-entry toc-h2"><a href="#escalating-privileges---becoming-the-root-user">Escalating Privileges - Becoming the root User</a></li>
 <li class="toc-entry toc-h2"><a href="#final-thoughts">Final Thoughts</a></li>
 </ul><p><em>Contains Spoilers</em></p>
 <h2 id="nmap-scan">
@@ -232,8 +234,10 @@ This could give us some attack vectors, such as <strong>RCE</strong> (Remote Cod
 <p><img src="https://user-images.githubusercontent.com/90112418/173173098-feae66ae-03bb-47c4-9f4b-08ab17f0afd7.png" alt="Pasted image 20220610122335">
 Bingo! It looks like we are met with some great information: the running services and their version numbers. It is fundamental sysadmin practice to keep all running services up to date to avoid any attackers exploiting unpatched vulnerabilities within these services. It looks like this admin had all of his services up to date…except the <strong>GetSimple</strong> service.</p>
 
-<p>This provides us with a new attack vector and is worth diving into in order to gain a foothold on our machine. ## Finding an exploit for GetSimple 3.3.15
-For this instance, I will use the Metasploit Framework and other CVE databases if needed.</p>
+<p>This provides us with a new attack vector and is worth diving into in order to gain a foothold on our machine.</p>
+<h2 id="finding-an-exploit-for-getsimple-3315">
+<a class="anchor" href="#finding-an-exploit-for-getsimple-3315" aria-hidden="true"><span class="octicon octicon-link"></span></a>Finding an exploit for GetSimple 3.3.15</h2>
+<p>For this instance, I will use the Metasploit Framework and other CVE databases if needed.</p>
 
 <p>Let’s first search for a Metasploit module that works against our version of <strong>GetSimple</strong>. If we are unable to find a working module in Metasploit , we will move on to CVE databases such as Rapid7 and ExploitDB to look further.</p>
 
@@ -430,8 +434,10 @@ meterpreter <span class="o">&gt;</span>
 </code></pre></div></div>
 <p>And there is our first flag. <code class="language-plaintext highlighter-rouge">7002d65b149b0a[...]</code> are the contents of the <strong>user.txt</strong> file.</p>
 
-<p>Now , let’s move on to to escalating privileges to the root user.## Escalating Privileges - Becoming the root User
-Now that we’ve got a foothold on the machine through a reverse shell, we are asked to escalate privleges to the root user and submit the flag of <strong>root.txt</strong>.</p>
+<p>Now , let’s move on to to escalating privileges to the root user.</p>
+<h2 id="escalating-privileges---becoming-the-root-user">
+<a class="anchor" href="#escalating-privileges---becoming-the-root-user" aria-hidden="true"><span class="octicon octicon-link"></span></a>Escalating Privileges - Becoming the root User</h2>
+<p>Now that we’ve got a foothold on the machine through a reverse shell, we are asked to escalate privleges to the root user and submit the flag of <strong>root.txt</strong>.</p>
 
 <p>Now would probably be a good time for us to upgrade our terminal to a nicer TTY terminal to get some of the good ol’ Linux functionality. We can do this by running the following command.</p>
 

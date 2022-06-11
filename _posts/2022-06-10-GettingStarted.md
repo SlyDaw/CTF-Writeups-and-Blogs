@@ -330,7 +330,7 @@ user.txt
 cat user.txt                                                                                                                                          
 7002d65b149b0a[...]
 ```
-And there is our first flag. ==7002d65b149b0a[...]== are the contents of the **user.txt** file.
+And there is our first flag. `7002d65b149b0a[...]` are the contents of the **user.txt** file.
 
 Now , let's move on to to escalating privileges to the root user.## Escalating Privileges - Becoming the root User
 Now that we've got a foothold on the machine through a reverse shell, we are asked to escalate privleges to the root user and submit the flag of **root.txt**.
@@ -379,7 +379,7 @@ root.txt
 > cat root.txt
 f1fba6e9f71efb26[...]
 ```
-Congratulations, the final flag is ==f1fba6e9f71efb26[...]== . You have officially completed the module!
+Congratulations, the final flag is `f1fba6e9f71efb26[...]`. You have officially completed the module!
 ## Final Thoughts
 The machine from the Getting Started module in HackTheBox Academy is a great first CTF for any beginner. I would recommend some basic knowledge of linux and tool usage , but the module does a great job in going over some of the skills and then letting the user try to pwn the machine on their own. If you would like to try the module yourself, here is the [link](https://academy.hackthebox.com/course/preview/getting-started).
 

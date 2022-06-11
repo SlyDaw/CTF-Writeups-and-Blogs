@@ -164,7 +164,7 @@ It’s important to look at things like comments (shown in green) in the html so
 <a class="anchor" href="#gobuster-scan" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gobuster Scan</h2>
 <p><code class="language-plaintext highlighter-rouge">&gt; gobuster -u 10.129.42.249 dir -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3- medium.txt -t50
 </code></p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">===============================================================</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">=============================================================</span>
 Gobuster v3.1.0
 by OJ Reeves <span class="o">(</span>@TheColonial<span class="o">)</span> &amp; Christian Mehlmauer <span class="o">(</span>@firefart<span class="o">)</span>
 <span class="o">===============================================================</span>
@@ -423,9 +423,9 @@ meterpreter <span class="o">&gt;</span>
 <span class="nb">ls                                                                                                                                                    
 </span>user.txt                                                                                                                                              
 <span class="nb">cat </span>user.txt                                                                                                                                          
-7002d65b149b0a4d19132a66feed21d8
+7002d65b149b0a...
 </code></pre></div></div>
-<p>And there is our first flag. ==7002d65b149b0a4d19132a66feed21d8== are the contents of the <strong>user.txt</strong> file.</p>
+<p>And there is our first flag. ==7002d65b149b0a…== are the contents of the <strong>user.txt</strong> file.</p>
 
 <p>Now , let’s move on to to escalating privileges to the root user.## Escalating Privileges - Becoming the root User
 Now that we’ve got a foothold on the machine through a reverse shell, we are asked to escalate privleges to the root user and submit the flag of <strong>root.txt</strong>.</p>
@@ -468,9 +468,9 @@ User www-data may run the following commands on gettingstarted:
 <span class="o">&gt;</span> <span class="nb">ls
 </span>root.txt
 <span class="o">&gt;</span> <span class="nb">cat </span>root.txt
-f1fba6e9f71efb2630e6e34da6387842
+f1fba6e9f71efb26...
 </code></pre></div></div>
-<p>Congratulations, the final flag is ==f1fba6e9f71efb2630e6e34da6387842==. You have officially completed the module!</p>
+<p>Congratulations, the final flag is ==f1fba6e9f71efb26…==. You have officially completed the module!</p>
 <h2 id="final-thoughts">
 <a class="anchor" href="#final-thoughts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Final Thoughts</h2>
 <p>The machine from the Getting Started module in HackTheBox Academy is a great first CTF for any beginner. I would recommend some basic knowledge of linux and tool usage , but the module does a great job in going over some of the skills and then letting the user try to pwn the machine on their own. If you would like to try the module yourself, here is the <a href="https://academy.hackthebox.com/course/preview/getting-started">link</a>.</p>

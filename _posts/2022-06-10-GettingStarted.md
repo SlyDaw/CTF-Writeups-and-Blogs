@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: https://academy.hackthebox.com/course/preview/getting-started
-categories: [CTF, HackTheBox]
+categories: [CTF, HackTheBox, Write Up]
 title: Write Up for HackTheBox - Getting Started (Academy Module) 
 ---
 ## nmap scan

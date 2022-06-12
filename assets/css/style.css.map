@@ -3,13 +3,13 @@
 	"file": "style.css",
 	"sources": [
 		"style.scss",
-		"../../tmp/jekyll-remote-theme-20220612-1-66q0yu/_sass/jekyll-theme-dracula.scss",
-		"../../tmp/jekyll-remote-theme-20220612-1-66q0yu/_sass/normalize.scss",
-		"../../tmp/jekyll-remote-theme-20220612-1-66q0yu/_sass/fonts.scss",
-		"../../tmp/jekyll-remote-theme-20220612-1-66q0yu/_sass/variables.scss",
-		"../../tmp/jekyll-remote-theme-20220612-1-66q0yu/_sass/mixins.scss",
-		"../../tmp/jekyll-remote-theme-20220612-1-66q0yu/_sass/rouge-dracula.scss",
-		"../../tmp/jekyll-remote-theme-20220612-1-66q0yu/_sass/colorspaces.scss"
+		"../../tmp/jekyll-remote-theme-20220612-1-cbud7o/_sass/jekyll-theme-dracula.scss",
+		"../../tmp/jekyll-remote-theme-20220612-1-cbud7o/_sass/normalize.scss",
+		"../../tmp/jekyll-remote-theme-20220612-1-cbud7o/_sass/fonts.scss",
+		"../../tmp/jekyll-remote-theme-20220612-1-cbud7o/_sass/variables.scss",
+		"../../tmp/jekyll-remote-theme-20220612-1-cbud7o/_sass/mixins.scss",
+		"../../tmp/jekyll-remote-theme-20220612-1-cbud7o/_sass/rouge-dracula.scss",
+		"../../tmp/jekyll-remote-theme-20220612-1-cbud7o/_sass/colorspaces.scss"
 	],
 	"sourcesContent": [
 		"@import \"jekyll-theme-dracula\";\n",

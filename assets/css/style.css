@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css 2012-02-07T12:37 UTC - https://github.com/necolas/normalize.css */
 /* ============================================================================= HTML5 display definitions ========================================================================== */
 /* Corrects block display not defined in IE6/7/8/9 & FF3 */
@@ -363,6 +364,18 @@ dt { color: #f1fa8c; font-weight: 600; }
 button, a.button { color: #282a36; border: 2px solid #8be9fd; background: #8be9fd; padding: 10px 12px; margin-top: 6px; line-height: 14px; font-size: 14px; font-weight: bold; display: inline-block; text-align: center; }
 
 button:hover, a.button:hover { background: #6272a4; color: #f8f8f2; border-color: #6272a4; }
+
+details > summary { list-style: none; }
+
+details > summary::-webkit-details-marker { display: none; }
+
+details > summary::before { content: "▷"; padding-inline-end: 8px; }
+
+details[open] > summary::before { content: "▽"; }
+
+[dir="rtl"] details > summary::before { content: "◁"; }
+
+[dir="rtl"] details[open] > summary::before { content: "▽"; }
 
 #header { z-index: 100; left: 0; top: 0px; height: 60px; width: 100%; position: fixed; background: #44475a; border-bottom: 4px solid #8be9fd; }
 
